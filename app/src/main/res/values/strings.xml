@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">ALC Project One</string>
+    <string-array name="Currency_code">
+        <item>USD</item>
+        <item>NGN</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>JPY</item>
+        <item>CHF</item>
+        <item>CAD</item>
+        <item>AUD</item>
+        <item>ZAR</item>
+        <item>CNY</item>
+        <item>INR</item>
+        <item>SGD</item>
+        <item>TWD</item>
+        <item>RUB</item>
+        <item>MXN</item>
+        <item>ILS</item>
+        <item>MYR</item>
+        <item>SEK</item>
+        <item>CHF</item>
+        <item>NOK</item>
+        <item>TRY</item>
+    </string-array>
 </resources>

@@ -34,21 +34,23 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:background="@drawable/round_corners"
             android:gravity="center"
-            android:text="5632,67"
+            android:text="ETH"
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ExpandableListView
+        <Spinner
             android:clickable="true"
             android:focusable="true"
-            android:background="@drawable/round_corners"
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:spinnerMode="dropdown"
+            android:entries="@array/Currency_code"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="match_parent" />
 
     </LinearLayout>
