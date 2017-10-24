@@ -43,6 +43,7 @@
             android:textStyle="bold" />
 
         <Spinner
+            android:id="@+id/spinner_eth"
             android:clickable="true"
             android:focusable="true"
             style="@style/Widget.AppCompat.DropDownItem.Spinner"
