@@ -1,8 +1,10 @@
 package com.andela.alcprojectone;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,18 +25,39 @@ public class MainActivity extends AppCompatActivity {
     CardView CardBTC;
     @BindView(R.id.etc_card)
     CardView CardEth;
+    @BindView(R.id.eth_conversion)
+    TextView ETHConversion;
+    @BindView(R.id.btc_conversion)
+    TextView BTCConversion;
+    @BindView(R.id.rate_btc)
+    TextView RateBTC;
+    @BindView(R.id.rate_eth)
+    TextView RateETH;
 
     public CurrencyViewModel currencyViewModel;
+
+    private String fyms = "BTC,ETH";
+    private String tsyms = "NGN,USD,EUR,JPY,GBP,CHF,CAD,AUD,ZAR,CNY,INR,SGD,TWD,RUB,MXN,ILS,MYR,SEK,CHF,NOK,TRY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        currencyViewModel.getCurrency().observe(this,Currency ->{
+
+
+        currencyViewModel = ViewModelProviders.of(this).get(CurrencyViewModel.class);
+        currencyViewModel.getConversion(fyms,tsyms).observe(this, Currency -> {
+
+            RateBTC.setText(String.valueOf("1BTC = " + Currency.getBTC().getUSD()));
+            RateETH.setText(String.valueOf("1ETH = " + Currency.getETH().getUSD()));
+            BTCConversion.setText(String.valueOf(Currency.getBTC().getUSD()));
+            ETHConversion.setText(String.valueOf(Currency.getETH().getUSD()));
+
 
             //Update UI
         });
+
+        ButterKnife.bind(this);
     }
 
     @Optional
