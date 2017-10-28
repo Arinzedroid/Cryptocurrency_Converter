@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ALC Project One</string>
+    <string name="app_name">Crypto Compare</string>
     <string-array name="Currency_code">
         <item>USD</item>
         <item>NGN</item>
@@ -22,4 +22,7 @@
         <item>NOK</item>
         <item>TRY</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
